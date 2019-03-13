@@ -1,0 +1,3 @@
+rootProject.name = 'voidtest'
+
+include ':app'

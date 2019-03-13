@@ -1,0 +1,9 @@
+{
+  "devToolsPort": 19002,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 13040,
+  "expoServerNgrokUrl": "https://zr-dev.korytanzan.demo1.exp.direct",
+  "packagerNgrokUrl": "https://packager.zr-dev.korytanzan.demo1.exp.direct",
+  "ngrokPid": 4720
+}
