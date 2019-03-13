@@ -3,7 +3,12 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import { Constants } from 'expo';
 import { Button } from 'native-base';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faKeyboard, faMicrophoneAlt } from '@fortawesome/free-solid-svg-icons'
+import {
+  faKeyboard,
+  faMicrophoneAlt,
+  faSortDown,
+  faExchangeAlt,
+} from '@fortawesome/free-solid-svg-icons'
 import Menu, { MenuItem, MenuDivider } from 'react-native-material-menu';
 
 
@@ -53,12 +58,9 @@ export default class App extends React.Component {
               alignItems: 'center',
             }}>
               <View style={{ alignItems: 'center', flex: 1 }}>
-                <FontAwesomeIcon icon={faKeyboard} color={'white'}/>
+                <FontAwesomeIcon icon={faKeyboard} color={'white'} />
               </View>
-              {/* <FontAwesomeIcon icon={faKeyboard} color={'white'}
-                style={{ marginRight: 8 }}
-              /> */}
-              <Text style={{color: '#ffffff', fontSize: 15, flex: 1 }}>Text</Text>
+              <Text style={{ color: '#ffffff', fontSize: 15, flex: 1 }}>Text</Text>
             </Button>
             <Button rounded small primary style={{
               backgroundColor: '#6ea5f7',
@@ -67,50 +69,95 @@ export default class App extends React.Component {
               alignItems: 'center',
             }}>
               <View style={{ alignItems: 'center', flex: 1 }}>
-                <FontAwesomeIcon icon={faMicrophoneAlt} color={'white'}/>
+                <FontAwesomeIcon icon={faMicrophoneAlt} color={'white'} />
               </View>
-              {/* <FontAwesomeIcon icon={faMicrophoneAlt} color={'white'}
-                style={{ backgroundColor: '#ff0', alignItems: 'center', flex: 1 }}
-              /> */}
               <Text style={{ color: '#ffffff', fontSize: 15, flex: 1, marginRight: 12 }}>Voice</Text>
             </Button>
-            {/* <View style={{
-              flex: 1,
-              flexDirection: 'row',
-              borderRadius: 15,
-              borderWidth: 0.5,
-              borderColor: '#d6d7da',
-              marginRight: 10,
-              alignItems: 'center',
-              justifyContent: 'space-evenly',
-            }}>
-              <Image
-                style={{}}
-                source={require('./assets/keyboard.png')}
-              />
-              <Text style={{}}>Text</Text>
-            </View> */}
-            {/* <View style={{
-              flex: 1,
-              flexDirection: 'row',
-              borderRadius: 15,
-              borderWidth: 0.5,
-              borderColor: '#d6d7da',
-              marginRight: 10,
-              alignItems: 'center',
-              justifyContent: 'space-evenly',
-            }}>
-              <Image
-                style={{}}
-                source={require('./assets/keyboard.png')}
-              />
-              <Text>Voice</Text>
-            </View> */}
-
           </View>
         </View>
         <View style={{ flex: 8, backgroundColor: '#ff0' }}>
-
+          <View
+            style={{
+              borderBottomColor: '#e0dbdb',
+              borderBottomWidth: 0.5,
+            }}
+          />
+          <View style={styles.menuLanguage}>
+            <Button full light large
+              style={{
+                flex: 2,
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                color: '#52575b'
+              }}
+              onPress={this.showMenu}
+            >
+              <Menu
+                ref={this.setMenuRef}
+                button=
+                {<Text
+                  style={{ color: '#52575b' }}
+                >
+                  Auto Language</Text>}
+              >
+                <MenuItem
+                  style={{ borderRadius: 50 }}
+                  onPress={this.hideMenu}>item
+                </MenuItem>
+                <MenuItem onPress={this.hideMenu}>Menu item 2</MenuItem>
+                <MenuItem onPress={this.hideMenu} disabled>
+                  Menu item 3
+                </MenuItem>
+                <MenuDivider />
+                <MenuItem onPress={this.hideMenu}>Menu item 4</MenuItem>
+              </Menu>
+              <FontAwesomeIcon icon={faSortDown} color={'gray'} />
+            </Button>
+            <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+              <FontAwesomeIcon icon={faExchangeAlt} color={'gray'} size={25} />
+            </View>
+            <Button full light large
+              style={{
+                flex: 2,
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexDirection: 'row',
+                color: '#52575b'
+              }}
+              onPress={this.showMenu}
+            >
+              <Menu
+                ref={this.setMenuRef}
+                button=
+                {<Text
+                  style={{ color: '#52575b' }}
+                >
+                  English</Text>}
+              >
+                <MenuItem
+                  style={{ borderRadius: 50 }}
+                  onPress={this.hideMenu}>item
+                </MenuItem>
+                <MenuItem onPress={this.hideMenu}>Menu item 2</MenuItem>
+                <MenuItem onPress={this.hideMenu} disabled>
+                  Menu item 3
+                </MenuItem>
+                <MenuDivider />
+                <MenuItem onPress={this.hideMenu}>Menu item 4</MenuItem>
+              </Menu>
+              <FontAwesomeIcon icon={faSortDown} color={'gray'} />
+            </Button>
+          </View>
+          <View
+            style={{
+              borderBottomColor: '#e0dbdb',
+              borderBottomWidth: 0.5,
+            }}
+          />
+          <View style={{ flex: 3, backgroundColor: '#ffffff' }}></View>
+          <View style={{ flex: 1, backgroundColor: '#ffffff' }}></View>
+          <View style={{ flex: 3 }}></View>
         </View>
         {/*  <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}> */}
         {/* <Menu
@@ -149,5 +196,10 @@ const styles = StyleSheet.create({
     flex: 2,
     // backgroundColor: '#4289f4',
     alignItems: 'center',
+  },
+  menuLanguage: {
+    // flex: 1,
+    backgroundColor: '#ededed',
+    flexDirection: 'row',
   }
 });
