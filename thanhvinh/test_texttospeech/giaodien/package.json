@@ -7,7 +7,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "expo": "^32.0.0",
+    "expo": "^46.0.14",
     "react": "16.5.0",
     "react-native": "0.58.5",
     "react-native-material-menu": "^0.4.2"
